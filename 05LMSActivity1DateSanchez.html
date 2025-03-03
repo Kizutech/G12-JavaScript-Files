@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS Date Script</title>
+</head>
+<body>
+    <h1>Date Display</h1>
+    <Script>
+        // Current Date
+        var currentDate = new Date();
+        document.write("Current Date: " + currentDate.toLocaleDateString() + "<br><br>");
+     
+        // Set a birthday
+        var birthday = new Date("October 30, 2007");
+        document.write("Birthday: " + birthday.toLocaleDateString() + "<br><br>");
+     
+        // Set 2 important holidays (Christmas & New Year)
+        var christmas = new Date("December 25, " + currentDate.getFullYear());
+        document.write("Christmas: " + christmas.toLocaleDateString() + "<br><br>");
+     
+        var newYear = new Date("January 1, " + (currentDate.getFullYear() + 1));
+        document.write("New Year: " + newYear.toLocaleDateString() + "<br><br>");
+     </Script>
+     
+     <style>
+        Body {
+            background-image: url(https://wallpapers.com/images/hd/white-anime-gxrk6b9f0g6eqfsz.jpg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        </style>
+</body>
+</html>

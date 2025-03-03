@@ -1,0 +1,78 @@
+<HTML>
+
+    <HEAD>
+    
+    <TITLE>This is a JS LMS Activity</TITLE>
+    
+    </HEAD>
+    
+    <BODY>
+    
+    <SCRIPT>
+    
+    function test_prime(n)
+    
+    {
+    
+    if (n===1)
+    
+    /* What does this if-else-if statement do? */
+    /*The if-else-if statement checks if the input number n is prime or not. 
+    If n is equal to 1, it returns false, if it's equal to 2, and if neither is true, 
+    it proceeds to the next block.*/
+    
+      {
+    
+        return false;
+    
+      }
+    
+      else if(n === 2)
+    
+      {
+    
+        return true;
+    
+    }
+    
+    else
+    
+      {
+    
+        for(var x = 2; x < n; x++)
+    
+        /* What does this for loop do? */
+        /*The for loop checks if n has divisors other than 1 and itself, 
+        starting from 2 and incrementing up to n-1. 
+        It checks if n is divisible by x using the modulo operator, 
+        returning false if n is not a prime number.*/
+    
+        {
+    
+          if(n % x === 0)
+    
+          {
+    
+            return false;
+    
+          }
+    
+        }
+    
+        return true; 
+    
+      }
+    
+    }
+    
+    document.write(test_prime(37));
+    
+    /* What does this function-enabled JS script do? */
+    /*The JavaScript script uses the function test_prime(n) to check if an integer is a prime number, 
+    and then outputs the result to an HTML document.*/
+    
+    </SCRIPT>
+    
+    </BODY>
+    
+    </HTML>

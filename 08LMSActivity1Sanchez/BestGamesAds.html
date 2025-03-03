@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 3 Best Games 2024 Trailer</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            background-color: #f0f0f0; 
+        }
+
+        body {
+            background-image: url(https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            background-attachment: fixed;
+            margin: 50px;
+        }
+
+        #slider {
+            width: 600px; 
+            height: 400px; 
+            border: 2px solid #333; 
+            margin: 20px 0; 
+        }
+
+        button {
+            padding: 10px 20px; 
+            font-size: 16px; 
+            cursor: pointer; 
+            margin: 5px; 
+        }
+
+        button:hover {
+            background-color: #ddd; 
+        }
+
+        h2 {
+            margin: 20px 0;
+            font-size: 24px;
+            color: #fcfcfc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var videos = [ 
+            "valorant.mp4", 
+            "strinova.mp4", 
+            "cod.mp4" 
+        ]; 
+        var num = 0; 
+        var autoSlideInterval;
+
+        function next() { 
+            var slider = document.getElementById("slider"); 
+            num++; 
+            if(num >= videos.length) { 
+                num = 0; 
+            } 
+            slider.src = videos[num]; 
+            slider.play(); 
+        } 
+
+        function prev() { 
+            var slider = document.getElementById("slider"); 
+            num--; 
+            if(num < 0) { 
+                num = videos.length - 1; 
+            } 
+            slider.src = videos[num]; 
+            slider.play(); 
+        }
+
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(next, 200000);
+        }
+
+        function stopAutoSlide() {
+            clearInterval(autoSlideInterval);
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'ArrowRight') {
+                next();
+            } else if (event.key === 'ArrowLeft') {
+                prev();
+            }
+        });
+
+        window.onload = startAutoSlide;
+
+        document.getElementById("slider").addEventListener('mouseover', stopAutoSlide);
+        document.getElementById("slider").addEventListener('mouseout', startAutoSlide);
+    </script>
+    <div> 
+        <h2>Top 3 Best Games 2024</h2>
+        <button onclick="prev()">Prev</button> 
+        <video id="slider" width="600" height="400" controls>
+            <source src="valoranat.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video> 
+        <button onclick="next()">Next</button> 
+    </div>
+</body>
+</html>
